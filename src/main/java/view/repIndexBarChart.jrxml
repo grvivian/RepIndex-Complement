@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="17d469c6-e692-4e3d-a3b0-a494663415bd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="aproach" class="java.lang.String"/>
+	<field name="element" class="java.lang.String"/>
+	<field name="weigth" class="java.lang.Double"/>
+	<title>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="1" width="802" height="30" uuid="d632624f-bce6-4439-89da-ace1f3e39448"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rep-Index Weigths Bar Chart]]></text>
+			</staticText>
+		</band>
+	</title>
+	<summary>
+		<band height="250" splitType="Stretch">
+			<stackedBarChart>
+				<chart>
+					<reportElement x="0" y="5" width="802" height="245" uuid="13928384-b787-4ab0-a780-968c104983c5"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{element}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{aproach}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{weigth}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot orientation="Horizontal"/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</stackedBarChart>
+		</band>
+	</summary>
+</jasperReport>

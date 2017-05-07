@@ -1,1 +1,118 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6e0cdee0-b71a-40f6-b5da-6ca9b90ea92f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="aproach" class="java.lang.String"/>
+	<field name="corelation" class="java.lang.String"/>
+	<field name="value" class="java.lang.Double"/>
+	<title>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="1" width="555" height="30" uuid="b9a297e6-31e8-4362-9ee8-dcfa32ba439a"/>
+				<textElement textAlignment="Center">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Corellations]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="16">
+			<staticText>
+				<reportElement x="1" y="1" width="150" height="15" uuid="caa16760-8cb8-4309-933e-10632c31ad66"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[aproach]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="151" y="1" width="150" height="15" uuid="78ef8296-6707-48f8-8a4e-630ad0f48d36"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[corelation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="1" width="150" height="15" uuid="2ccbe968-76fb-429b-8cca-d19b3e5c3f24"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[value]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="1" width="554" height="1" uuid="f08f83b2-5522-42a3-9a9d-830b23f93f20"/>
+			</line>
+			<line>
+				<reportElement x="1" y="1" width="1" height="15" uuid="82c46b3f-e94d-43c3-877c-b20591535bda"/>
+			</line>
+			<line>
+				<reportElement x="301" y="1" width="1" height="15" uuid="77bf3937-b190-4585-aa53-eb6af290722f"/>
+			</line>
+			<line>
+				<reportElement x="151" y="1" width="1" height="15" uuid="a5763aa8-16f4-4783-ac88-9eb096517e13"/>
+			</line>
+			<line>
+				<reportElement x="1" y="15" width="554" height="1" uuid="659922d9-b46a-4453-add8-6d1572014cd1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="1" width="150" height="15" uuid="fb23cc5d-3a32-4334-863e-157571059a89"/>
+				<textFieldExpression><![CDATA[$F{aproach}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="1" width="150" height="15" uuid="4a709991-184a-491e-9124-5922b53998e2"/>
+				<textFieldExpression><![CDATA[$F{corelation}]]></textFieldExpression>
+			</textField>
+			<textField pattern="0.0000">
+				<reportElement x="301" y="1" width="150" height="15" uuid="9d4a113e-2d94-4754-85c7-15e6ba09a25f"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{value}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="0" width="1" height="15" uuid="dc58ec24-5229-47f9-a7e6-4b477a44d377"/>
+			</line>
+			<line>
+				<reportElement x="301" y="0" width="1" height="15" uuid="73ed38f5-7556-475c-889b-2706b813da28"/>
+			</line>
+			<line>
+				<reportElement x="151" y="0" width="1" height="15" uuid="6cdd1b47-4e09-41a5-81af-52ec01714b5f"/>
+			</line>
+			<line>
+				<reportElement x="1" y="15" width="554" height="1" uuid="23062687-20cc-4f83-8709-20dc3e512f0e"/>
+			</line>
+		</band>
+	</detail>
+	<summary>
+		<band height="135">
+			<barChart>
+				<chart>
+					<reportElement x="0" y="5" width="555" height="130" uuid="d8beee8a-3242-4d90-8fe3-bcefda609ca9"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{corelation}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{aproach}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{value}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>
